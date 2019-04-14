@@ -66,6 +66,7 @@ urlpatterns = [
     path('boards/<int:pk>/topics/<int:topic_pk>/', views.PostListView.as_view(), name='topic_posts'),
     path('boards/<int:pk>/topics/<int:topic_pk>/reply/', views.reply_topic, name='reply_topic'),
     path('settings/account/', accounts_views.UserUpdateView.as_view(), name='my_account'),
+    path('silk/', include('silk.urls', namespace='silk')),
 ]
 
 if settings.DEBUG:
